@@ -168,7 +168,7 @@
               ;; tail recursive loop and not-utilizing the draw callback, but that's left
               ;; as an excercise for the reader.
               (draw-buffer (first @time-slices) scale)
-              (swap! time-slices (fn [_] (rest @time-slices))))
+              (swap! time-slices rest))
       :size [(* scale width) (* scale height)])))
 
 (defn -main [rule-num & args]
